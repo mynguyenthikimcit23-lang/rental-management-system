@@ -20,7 +20,7 @@ public class Main {
         
         System.out.println(contract.getActive());
 
-        System.out.println(contract.getRentAmount());
+        // System.out.println(contract.getRentAmount());
 
         property.updateRentalRate(5500);
         contract.terminate();
