@@ -1,10 +1,18 @@
 public class Property {
-    protected int propertyId ;
+    protected int propertyId;
     protected String description;
-    protected double rentalRate ;
-    public boolean isAvailable;
-    
-    public Property (int propertyId, String description, double rentalRate){
+    protected double rentalRate;
+    protected boolean isAvailable;
+
+    public boolean getAvailable() {
+        return isAvailable;
+    }
+
+    public void setAvailable(boolean isAvailable) {
+        this.isAvailable = isAvailable;
+    }
+
+    public Property(int propertyId, String description, double rentalRate) {
         if (rentalRate <= 0) {
             throw new IllegalArgumentException("Rental rate must be greater than 0");
         }
@@ -14,14 +22,14 @@ public class Property {
         this.isAvailable = true;
     }
 
-    public void updateDescription(String description){
-        this.description =description;
+    public void updateDescription(String description) {
+        this.description = description;
     }
 
     public void updateRentalRate(double rentalRate) {
-        if (rentalRate <= 0){
+        if (rentalRate <= 0) {
             throw new IllegalArgumentException("Rental rate must be greater than 0");
-        }else{
+        } else {
             this.rentalRate = rentalRate;
         }
     }
@@ -44,13 +52,5 @@ public class Property {
 
     public double getRentalRate() {
         return rentalRate;
-    }
-
-    public boolean getAvailable() {
-        return isAvailable;
-    }
-
-    public void setAvailable(boolean isAvailable) {
-        this.isAvailable = isAvailable;
     }
 }

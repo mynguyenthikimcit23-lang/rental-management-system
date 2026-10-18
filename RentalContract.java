@@ -9,11 +9,19 @@ public class RentalContract {
     protected double rentAmount;
     protected boolean isActive;
 
+    public boolean getActive() {
+        return isActive;
+    }
+
+    public void setActive(boolean isActive) {
+        this.isActive = isActive;
+    }
+
     public RentalContract(int contractID, Property property, Tenant tenant, LocalDate startDate, LocalDate endDate) {
         if (!property.getAvailable())
-            throw new IllegalArgumentException("Bất động sản bất động");
+            throw new IllegalArgumentException("Property is not available for rent");
         if (!endDate.isAfter(startDate))
-            throw new IllegalArgumentException("ngày end phải ở sau ngày start");
+            throw new IllegalArgumentException("End date must be after start date");
         this.contractID = contractID;
         this.property = property;
         this.tenant = tenant;
@@ -25,9 +33,13 @@ public class RentalContract {
     }
 
     public void terminate() {
-        if (this.isActive) {
-            this.isActive = false;
-            this.property.setAvailable(true);
+        if (isActive) {
+            isActive = false;
+            property.setAvailable(true);
         }
+    }
+
+    public double getRentAmount() {
+        return rentAmount;
     }
 }

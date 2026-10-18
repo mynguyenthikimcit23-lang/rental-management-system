@@ -11,11 +11,15 @@ public class Tenant extends User {
     }
 
     public RentalContract rentProperty(int contractID, Property property, LocalDate startDate, LocalDate endDate) {
-        
-        RentalContract contract = new RentalContract(contractID, property, this, startDate, endDate);
-        if (!rentalContracts.contains(contract))
-            rentalContracts.add(contract);
-        return contract;
+        try {
+            RentalContract contract = new RentalContract(contractID, property, this, startDate, endDate);
+            if (!rentalContracts.contains(contract))
+                rentalContracts.add(contract);
+            return contract;
+        } catch (IllegalArgumentException e) {
+            System.err.println("Error creating rental contract: " + e.getMessage());
+            return null;
+        }
     }
 
     public List<RentalContract> getRentalContracts() {
