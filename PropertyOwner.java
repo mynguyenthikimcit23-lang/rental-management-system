@@ -9,14 +9,14 @@ public class PropertyOwner extends User {
         ownedProperties = new ArrayList<>();
     }
 
-    public Property PropertyOwner(int propertyID, String description, double rentalRate) {
+    public Property createProperty(int propertyID, String description, double rentalRate) {
         Property property = new Property(propertyID, description, rentalRate);
         if (!ownedProperties.contains(property))
             ownedProperties.add(property);
         return property;
     }
 
-    public List getOwnedProperties() {
+    public List<Property> getProperties() {
         return ownedProperties;
     }
 }
