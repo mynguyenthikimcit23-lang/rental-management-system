@@ -17,14 +17,16 @@ public class Main {
         System.out.println(tenant.getRentalContracts().size());
 
         System.out.println(property.getAvailable());
-        
+
         System.out.println(contract.getActive());
 
         System.out.println(contract.getRentAmount());
 
         property.updateRentalRate(5500);
         contract.terminate();
+
         System.out.println(contract.getActive());
+        
         System.out.println(property.getAvailable());
     }
 }
