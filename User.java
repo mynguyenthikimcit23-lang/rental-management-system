@@ -20,11 +20,7 @@ public class User {
     }
 
     // UpdateProfile: Validates data before executing the profile update
-    public void updateProfile(int idUpdate, String firstNameUpdate, String lastNameUpdate, String emailUpdate) {
-        if (idUpdate <= 0) {
-            throw new IllegalArgumentException("User ID is invalid. User ID must be a positive number greater than 0");
-        }
-        this.userID = idUpdate;
+    public void updateProfile(String firstNameUpdate, String lastNameUpdate, String emailUpdate) {
         // Validate all values before into constructor
         String validFirstName = validateName(firstNameUpdate);
         String validLastName = validateName(lastNameUpdate);
@@ -77,12 +73,6 @@ public class User {
 
     public String getFullName() {
         return firstName + " " + lastName;
-    }
-
-    public void updateProfile(String firstName, String lastName, String email) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
     }
 
 }
