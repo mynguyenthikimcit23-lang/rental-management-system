@@ -4,17 +4,15 @@ public class Property {
     protected double rentalRate;
     protected boolean isAvailable;
 
-    public boolean getAvailable() {
-        return isAvailable;
-    }
-
-    public void setAvailable(boolean isAvailable) {
-        this.isAvailable = isAvailable;
-    }
-
     public Property(int propertyId, String description, double rentalRate) {
-        if (rentalRate <= 0) {
-            throw new IllegalArgumentException("Rental rate must be greater than 0");
+        if (propertyId <= 0) {
+            throw new IllegalArgumentException("Property ID must be a positive integer.");
+        }
+        if (description == null || description.trim().isEmpty()) {
+            throw new IllegalArgumentException("Description cannot be empty");
+        }
+        if (!Double.isFinite(rentalRate) || rentalRate <= 0 ){
+            throw new IllegalArgumentException("RentalRate must be finite and positive decimal.");
         }
         this.propertyId = propertyId;
         this.description = description;
@@ -23,15 +21,22 @@ public class Property {
     }
 
     public void updateDescription(String description) {
+        if (description == null || description.trim().isEmpty()) {
+            throw new IllegalArgumentException("Description cannot be empty");
+        }
         this.description = description;
     }
 
     public void updateRentalRate(double rentalRate) {
-        if (rentalRate <= 0) {
-            throw new IllegalArgumentException("Rental rate must be greater than 0");
-        } else {
-            this.rentalRate = rentalRate;
+        if(!Double.isFinite(rentalRate) || rentalRate <= 0 ) {
+            throw new IllegalArgumentException("RentalRate must be finite and positive decimal.");
         }
+        this.rentalRate = rentalRate;
+        
+    }
+
+    public double getRentalRate() {
+        return rentalRate;
     }
 
     public int getPropertyId() {
@@ -39,6 +44,9 @@ public class Property {
     }
 
     public void setPropertyId(int propertyId) {
+        if (propertyId <= 0) {
+            throw new IllegalArgumentException("Property ID must be a positive integer.");
+        }
         this.propertyId = propertyId;
     }
 
@@ -47,10 +55,14 @@ public class Property {
     }
 
     public void setDescription(String description) {
-        this.description = description;
+        updateDescription(description);
     }
 
-    public double getRentalRate() {
-        return rentalRate;
+    public boolean getAvailable() {
+        return isAvailable;
+    }
+
+    public void setAvailable(boolean isAvailable) {
+        this.isAvailable = isAvailable;
     }
 }
