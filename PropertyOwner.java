@@ -13,6 +13,7 @@ public class PropertyOwner extends User {
             Property property = new Property(propertyID, description, rentalRate);
             if (ownedProperties.contains(property)){
                 System.err.println("Error creating property: Property already exists in owner's list.");
+                return null;
             }
             ownedProperties.add(property);
             return property;
