@@ -1,3 +1,6 @@
+import model.Property;
+import model.PropertyOwner;
+
 public class PropertyOwnerTest {
     private static int passed = 0;
     private static int failed = 0;

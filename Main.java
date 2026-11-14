@@ -1,6 +1,11 @@
 
 import java.time.LocalDate;
 
+import model.Property;
+import model.PropertyOwner;
+import model.RentalContract;
+import model.Tenant;
+
 public class Main {
     public static void main(String[] args) {
         // chủ sở hữu bất động sản và người thuê
