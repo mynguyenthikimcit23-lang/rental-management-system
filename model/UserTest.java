@@ -1,4 +1,4 @@
-import model.User;
+package model;
 
 public class UserTest {
     private static int passed = 0;

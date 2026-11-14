@@ -1,3 +1,5 @@
+package controller;
+
 import model.Property;
 import model.PropertyOwner;
 import model.RentalContract;
