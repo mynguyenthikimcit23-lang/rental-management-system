@@ -6,6 +6,12 @@
 javac -encoding UTF-8 -d out *.java model/*.java controller/*.java view/*.java
 ```
 
+## Run the application
+
+```cmd
+java -cp out Main
+```
+
 ## Run tests
 
 ```cmd
