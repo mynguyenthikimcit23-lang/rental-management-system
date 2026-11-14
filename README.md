@@ -1,15 +1,18 @@
 # Rental Management System
 
-## Cú pháp chạy từng file test
+## Compile Java files
 
-Biên dịch các file Java:
-
-```bash
-javac -encoding UTF-8 -d out *.java
+```cmd
+javac -encoding UTF-8 -d out *.java model/*.java controller/*.java view/*.java
 ```
 
-Chạy `UserTest`:
+## Run tests
 
-```bash
-java -cp out UserTest
+```cmd
+java -cp out model.UserTest
+java -cp out PropertyTest
+java -cp out PropertyOwnerTest
+java -cp out TenantTest
+java -cp out RentalContractTest
+java -cp out IntegrationTest
 ```
