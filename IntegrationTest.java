@@ -1,5 +1,10 @@
 import java.time.LocalDate;
 
+import model.Property;
+import model.PropertyOwner;
+import model.RentalContract;
+import model.Tenant;
+
 public class IntegrationTest {
     private static int passed = 0;
     private static int failed = 0;

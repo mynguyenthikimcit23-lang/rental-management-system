@@ -1,5 +1,9 @@
 import java.time.LocalDate;
 
+import model.Property;
+import model.RentalContract;
+import model.Tenant;
+
 public class RentalContractTest {
     private static int passed = 0;
     private static int failed = 0;

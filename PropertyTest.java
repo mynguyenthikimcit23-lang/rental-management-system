@@ -1,3 +1,5 @@
+import model.Property;
+
 public class PropertyTest {
     private static int passed = 0;
     private static int failed = 0;

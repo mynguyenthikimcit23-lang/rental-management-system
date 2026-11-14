@@ -1,3 +1,4 @@
+package model;
 public class Property {
     protected int propertyId;
     protected String description;

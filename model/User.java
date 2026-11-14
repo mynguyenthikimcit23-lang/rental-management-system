@@ -1,3 +1,4 @@
+package model;
 public class User {
     protected int userID;
     protected String firstName;

@@ -1,3 +1,5 @@
+import model.User;
+
 public class UserTest {
     private static int passed = 0;
     private static int failed = 0;
